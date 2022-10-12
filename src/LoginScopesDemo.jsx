@@ -2,15 +2,15 @@ import UAuth from "@uauth/js"
 import React, { useState } from "react";
 
 import "./login-components//stylesheets/LoginWithPopup.css"
+import udLogo from "./assets/ud-logo-lockup.svg"
 import ClaimsTable from "./login-components/ClaimsTable"
 
 const uauth = new UAuth({
     clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
-    redirectUri: "http://localhost:3000",
+    redirectUri: "https://loginwithunstoppable.com",
     scope: "openid wallet email:optional profile:optional social:optional"
   }
 )
-
 
 function safeMakeSocialData(authorization, app){
     let data = {}
@@ -100,9 +100,10 @@ function LoginScopesDemo(){
 
     return(
         <div id="login-options-container" className="login-options-container">
+            <img src={udLogo} style={{ height: 100, width: 200, alignSelf: "right"}} alt="udlogo"/>
             <h1>Login Scopes!</h1>
             <div className="login-section">
-                <p className="tip"> Login With Unstoppable has a variety of scopes you can receive. Try logging in below to check it out! </p>
+                <p className="tip"> Login With Unstoppable has a variety of scopes. Try logging in below to check out what your app can get! </p>
                 <button id="udlogin" className="udlogin" onClick={udLogin}></button>
                 <p> -- --- --- --- --- </p>
                 <h3><a href="https://docs.unstoppabledomains.com/login-with-unstoppable/scopes-for-login/#scopes-for-login">Scopes</a></h3><br/>
