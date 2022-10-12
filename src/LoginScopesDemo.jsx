@@ -7,7 +7,7 @@ import ClaimsTable from "./login-components/ClaimsTable"
 
 const uauth = new UAuth({
     clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
-    redirectUri: "https://loginwithunstoppable.com",
+    redirectUri: "https://loginwithunstoppable.com/",
     scope: "openid wallet email:optional profile:optional social:optional"
   }
 )
