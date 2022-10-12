@@ -1,0 +1,41 @@
+.claims-table-wrapper{
+    max-width: 100%;
+}
+
+.claims-table-container{
+    margin-top: 40pt;
+    width: 50%;
+}
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+.claims-table{
+    border-collapse: collapse;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 80%;
+    min-width: 30%;
+    word-wrap: break-word;
+    table-layout: fixed;
+}
+
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+  word-break: break-all;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+th {
+    background-color: #0661bc;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+}
