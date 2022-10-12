@@ -104,7 +104,10 @@ function LoginScopesDemo(){
             <div className="login-section">
                 <p className="tip"> Login With Unstoppable has a variety of scopes you can receive. Try logging in below to check it out! </p>
                 <button id="udlogin" className="udlogin" onClick={udLogin}></button>
-                <div className="orDivider"><p> -- --- -- </p></div>
+                <p> -- --- --- --- --- </p>
+                <h3><a href="https://docs.unstoppabledomains.com/login-with-unstoppable/scopes-for-login/#scopes-for-login">Scopes</a></h3><br/>
+                <b>Displayed As: </b>Domain Data, UD Profile, Email, Socials, Verified Wallets
+                <p> -- --- --- --- ---</p>
                 {loggedIn && <ClaimsTable title="Domain Data" showNone={showNone} data={domainData} />}
                 {loggedIn && <ClaimsTable title="UD Profile" showNone={showNone} data={profileData} />}
                 {loggedIn && <ClaimsTable title="Email" showNone={showNone} data={emailData} />}
