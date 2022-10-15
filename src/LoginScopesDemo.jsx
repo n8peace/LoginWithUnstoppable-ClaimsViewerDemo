@@ -4,29 +4,30 @@ import React, { useState } from "react";
 import "./login-components//stylesheets/LoginWithPopup.css"
 import udLogo from "./assets/ud-logo-lockup.svg"
 import ClaimsTable from "./login-components/ClaimsTable"
+import AnimatedDemo from "./animated-demo-components/AnimatedDemo";
 
-
+/*
 const uauth = new UAuth({
     clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
     redirectUri: "https://loginwithunstoppable.com/",
     scope: "openid wallet email:optional profile:optional social:optional"
   }
-)
-/*
+)*/
+
 const uauth = new UAuth({
     clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
     redirectUri: "http://localhost:3000",
     scope: "openid wallet email:optional profile:optional social:optional"
   }
 )
-*/
+
 
 
 function safeMakeSocialData(authorization, app){
     let data = {}
     try{
         data["handle"] = authorization.idToken[app].location;
-        data["verified"] = authorization.idToken[app].verified;
+        data["verified"] = String(authorization.idToken[app].verified);
         if (app==="twitter"){
             data["followers"] = authorization.idToken[app].metrics.follower;
             data["following"] = authorization.idToken[app].metrics.following;
@@ -96,7 +97,6 @@ function LoginScopesDemo(){
 
 
     const handleLoginState = (authorization) => {
-        console.log("Handle login: ",authorization)
         if (authorization){
             setLoggedIn(true)
         }
@@ -149,17 +149,31 @@ function LoginScopesDemo(){
         authorization.idToken.verified_addresses.forEach(item => temp[item.symbol]=item.address)
         setVerifiedAddressesData(temp)
     }
-    
 
-    // console.log("User: ",user)
-    console.log("Main-Authorization: ",authorization)
-    // handleClaims(authorization,user)
+    return(
+        <div id="login-options-container" className="login-options-container">
+            <img src={udLogo} style={{ height: 100, width: 200, alignSelf: "right"}} alt="udlogo"/>
+            <h1>Login Scopes!</h1>
+            <div className="login-section">
+                <p className="tip"> Login With Unstoppable has a variety of scopes. Try logging in below to check out what your app can get! </p>
+                <h3><a href="https://docs.unstoppabledomains.com/login-with-unstoppable/scopes-for-login/#scopes-for-login">Full Documentation</a></h3><br/>
+                <button id="udlogin" className="udlogin" onClick={handleLogin}></button>
+                {loggedIn && <div><button id="udlogout" className="udlogout" onClick={handleLogout}>Logout</button></div>}
+                <p> --- --- --- --- --- --- --- --- </p>
+                <b>In This Demo:</b> Domain Data | Profile Data | Email | Socials | Verified Wallets
+                <p> --- --- --- --- --- --- --- --- </p>
+                {loggedIn &&<AnimatedDemo 
+                    domainData={domainData}
+                    profileData={profileData}    
+                    emailData={emailData}
+                    socialsData={socialsData}
+                    verifiedAddressesData={verifiedAddressesData}
+                />}
+            </div>
+        </div>
+    )
 
-    const udLogout = async() =>{
-        const userInfo = await uauth.user()
-        await uauth.logout()
-    }
-
+    /*
     return(
         <div id="login-options-container" className="login-options-container">
             <img src={udLogo} style={{ height: 100, width: 200, alignSelf: "right"}} alt="udlogo"/>
@@ -184,6 +198,7 @@ function LoginScopesDemo(){
             </div>
         </div>
     )
+    */
 }
 
 export default LoginScopesDemo;

@@ -1,0 +1,60 @@
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.animated-demo-fade{
+    max-width: 100%;
+    animation-name: animate-fade;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+}
+
+.animated-demo-slideup{
+    max-width: 100%;
+    animation-name: animate-slideup;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@keyframes animate-slideup {
+    from{
+        margin-top: 100%
+    }
+
+    to{
+        margin-top: 0%;
+    }
+}
+
+.description{
+    width: 40%;
+    margin: 0 auto;
+    line-height: 25px;
+}
+
+h2{
+    margin-top: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.next-button{
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+    transition-duration: 0.4s;
+    border: none;
+    border-radius: 10px;
+    background-color: #0E67FF;
+    color: white;
+}
+
+.next-button:hover{
+    color: rgb(6, 7, 40);
+    background-color: aliceblue;
+    border: 1px solid#0E67FF ;
+}
