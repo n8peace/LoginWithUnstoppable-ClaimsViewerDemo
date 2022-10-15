@@ -21,6 +21,7 @@ const uauth = new UAuth({
 )
 */
 
+
 function safeMakeSocialData(authorization, app){
     let data = {}
     try{
@@ -97,11 +98,9 @@ function LoginScopesDemo(){
     const handleLoginState = (authorization) => {
         console.log("Handle login: ",authorization)
         if (authorization){
-            console.log("Logged In!")
             setLoggedIn(true)
         }
         else{
-            console.log("Not logged in!")
             setLoggedIn(false)
         }
     }
@@ -158,10 +157,7 @@ function LoginScopesDemo(){
 
     const udLogout = async() =>{
         const userInfo = await uauth.user()
-        console.log("Before: ",userInfo)
         await uauth.logout()
-        console.log("logged out")
-        console.log("Now: ",userInfo)
     }
 
     return(

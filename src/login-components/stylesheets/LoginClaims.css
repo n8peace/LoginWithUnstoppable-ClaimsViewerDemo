@@ -1,5 +1,23 @@
 .claims-table-wrapper{
     max-width: 100%;
+    animation-name: animate-slideup;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@keyframes animate-slideup {
+    from{
+        margin-top: 100%
+    }
+
+    to{
+        margin-top: 0%;
+    }
 }
 
 .claims-table-container{
