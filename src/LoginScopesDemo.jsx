@@ -6,20 +6,22 @@ import udLogo from "./assets/ud-logo-lockup.svg"
 import ClaimsTable from "./login-components/ClaimsTable"
 import AnimatedDemo from "./animated-demo-components/AnimatedDemo";
 
-/*
+
 const uauth = new UAuth({
     clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
     redirectUri: "https://loginwithunstoppable.com/",
     scope: "openid wallet email:optional profile:optional social:optional"
   }
-)*/
+)
 
+/*
 const uauth = new UAuth({
     clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
     redirectUri: "http://localhost:3000",
     scope: "openid wallet email:optional profile:optional social:optional"
   }
 )
+*/
 
 
 
