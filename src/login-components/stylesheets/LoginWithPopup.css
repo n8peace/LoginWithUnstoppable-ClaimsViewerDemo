@@ -1,5 +1,6 @@
 .login-options-container{
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 200px;
 }
 
 .udlogin{
@@ -25,3 +26,18 @@
     font-family: Arial;
 }
 
+
+.udlogout{
+    margin-top: 10px;
+    color: rgb(6, 7, 40);
+    width: 100px;
+    height: 40px;
+    transition-duration: 0.4s;
+    border: none;
+    border-radius: 10px;
+}
+
+.udlogout:hover{
+    background-color: #0E67FF;
+    color: white;
+}

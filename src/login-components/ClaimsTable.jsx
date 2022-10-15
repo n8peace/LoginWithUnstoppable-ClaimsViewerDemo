@@ -20,8 +20,10 @@ function generateResults(showNone,data,title){
         if (Object.keys(data).length >0){
             results.push(
                 <table id={title} className={tableClassName}>
-                    <tr><th>Data Point</th><th>Value</th></tr>
+                    <tbody>
+                        <tr><th>Data Point</th><th>Value</th></tr>
                         {buildTableBody(showNone,data)}
+                    </tbody>    
                 </table>
             );
         }else{
@@ -30,9 +32,9 @@ function generateResults(showNone,data,title){
     } else{
         results.push(<p>None Given</p>)
     }
-
     return(results)
 }
+
 
 function ClaimsTable(props){
     const { showTitle = true} = props;
