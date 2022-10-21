@@ -1,5 +1,7 @@
 import "./AnimatedDemo.css"
 
+
+import Navbar from "./Navbar";
 import ClaimsTable from "../login-components/ClaimsTable"
 import React, { useState } from "react";
 
@@ -21,7 +23,7 @@ function AnimatedDemo(props){
     let [showVerifiedWalletsData,setShowVerifiedWalletsData] = useState(false);
     let [showSummary, setShowSummary] = useState(false);
 
-    const timeBetweenItems = 4000;
+    const timeBetweenItems = 2000;
 
     const doLazyAnimation = () => {
         setTimeout(()=>{
@@ -34,6 +36,16 @@ function AnimatedDemo(props){
 
     return(
         <div id="animatedDemo">
+            <p> --- --- --- --- --- --- --- --- </p>
+            <Navbar 
+                showDomainDataHandler={setShowDomainData}
+                showProfileDataHandler={setShowProfileData}
+                showEmailDataHandler={setShowEmailData}
+                showSocialsDataHandler={setShowSocialsData}
+                showVerifiedWalletsDataHandler={setShowVerifiedWalletsData}
+                showSummaryHandler={setShowSummary}
+            />
+            <p> --- --- --- --- --- --- --- --- </p>
             { showLoading && <h1>Get Ready To View Your Results!</h1>} 
             { showDomainData && <DomainData data={props.domainData} timer={timeBetweenItems} currentHandler={setShowDomainData} nextHandler={setShowProfileData}/>}
             { showProfileData && <ProfileData data={props.profileData} timer={timeBetweenItems} currentHandler={setShowProfileData} nextHandler={setShowEmailData} domainName={props.domainData.domainName}/>}

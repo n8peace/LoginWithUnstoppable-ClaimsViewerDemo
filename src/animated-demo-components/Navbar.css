@@ -1,0 +1,11 @@
+.section-link{
+    background:none;
+    border: none;
+    font-size: 12pt;
+    border-radius: 4px;
+}
+
+.section-link:hover{
+    background-color: blueviolet;
+    color: white;
+}
