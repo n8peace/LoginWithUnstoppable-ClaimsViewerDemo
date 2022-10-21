@@ -7,22 +7,41 @@ import ClaimsTable from "./login-components/ClaimsTable"
 import AnimatedDemo from "./animated-demo-components/AnimatedDemo";
 
 
+
+let redirectUri = "";
+if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"){
+    redirectUri = "http://localhost:3000"
+}else(
+    redirectUri = "https://loginwithunstoppable.com/"
+)
 const uauth = new UAuth({
     clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
-    redirectUri: "https://loginwithunstoppable.com/",
+    redirectUri: redirectUri,
     scope: "openid wallet email:optional profile:optional social:optional"
   }
 )
 
-/*
-const uauth = new UAuth({
-    clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
-    redirectUri: "http://localhost:3000",
-    scope: "openid wallet email:optional profile:optional social:optional"
-  }
-)
-*/
 
+const getUsername = () => {
+    try{
+        let usernameString = window.localStorage.username;
+        return(JSON.parse(usernameString).value)
+    }catch(e){
+        return("")
+    }
+}
+
+const getButtonText = () => {
+    let buttonText = "";
+    const username = getUsername();
+    console.log("Username: ",username)
+    if(username){
+        buttonText = "Login With "+username;
+    }else{
+        buttonText = "Login With Unstoppable"
+    }
+    return buttonText;
+}
 
 
 function safeMakeSocialData(authorization, app){
@@ -159,7 +178,7 @@ function LoginScopesDemo(){
             <div className="login-section">
                 <p className="tip"> Login With Unstoppable has a variety of scopes. Try logging in below to check out what your app can get! </p>
                 <h3><a href="https://docs.unstoppabledomains.com/login-with-unstoppable/scopes-for-login/#scopes-for-login">Full Documentation</a></h3><br/>
-                <button id="udlogin" className="udlogin" onClick={handleLogin}></button>
+                <button id="udlogin" className="udlogin" onClick={handleLogin}>{getButtonText()}</button>
                 {loggedIn && <div><button id="udlogout" className="udlogout" onClick={handleLogout}>Logout</button></div>}
                 <p> --- --- --- --- --- --- --- --- </p>
                 <b>In This Demo:</b> Domain Data | Profile Data | Email | Socials | Verified Wallets

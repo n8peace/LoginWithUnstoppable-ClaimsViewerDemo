@@ -4,18 +4,39 @@
 }
 
 .udlogin{
-    background-image: url('../assets/default-large.svg');
-    background-size: cover;
+    background-image: url("../assets/Unstoppable_Domains_Logo_Mark_Off_White-01.svg");
+    background-size: fit;
+    background-repeat: no-repeat;
+    background-position: 70px;
+    background-color: #0E67FF;
     width: 420px;
     height: 52px;
     border: none;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 12pt;
     margin: 1px;
 }
 
-.udlogin:hover {
-    background-image: url('../assets/hover-large.svg');
+
+.udlogin:hover{
+    background-color: #003ba1;
 }
 
+
+.udLogin:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
 
 .login-section{
     text-align: center;
