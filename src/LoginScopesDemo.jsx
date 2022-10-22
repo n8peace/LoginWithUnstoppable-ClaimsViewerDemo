@@ -35,7 +35,7 @@ const getButtonText = () => {
     let buttonText = "";
     const username = getUsername();
     if(username){
-        buttonText = "Login With "+username;
+        buttonText = username;
     }else{
         buttonText = "Login With Unstoppable"
     }
