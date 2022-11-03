@@ -32,7 +32,7 @@ function AnimatedDemo(props){
         setTimeout(()=>{
             setShowDomainData(true);
             setShowLoading(false);
-        },2000)
+        },1000)
     }
 
     if(showLoading){doLazyAnimation()};
