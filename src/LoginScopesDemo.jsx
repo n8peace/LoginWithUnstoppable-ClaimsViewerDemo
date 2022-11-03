@@ -15,7 +15,7 @@ if (window.location.hostname === "localhost" || window.location.hostname === "12
     redirectUri = "https://loginwithunstoppable.com/"
 )
 const uauth = new UAuth({
-    clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
+    clientID: "943accc4-7610-4dbe-9fb4-aff7076a2da8",
     redirectUri: redirectUri,
     scope: "openid wallet email:optional profile:optional social:optional badges:optional"
   }
