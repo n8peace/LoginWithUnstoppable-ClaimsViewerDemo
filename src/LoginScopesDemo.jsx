@@ -17,7 +17,7 @@ if (window.location.hostname === "localhost" || window.location.hostname === "12
 const uauth = new UAuth({
     clientID: "e88e46ce-c3ca-477f-a11b-3dd8742fde92",
     redirectUri: redirectUri,
-    scope: "openid wallet email:optional profile:optional social:optional"
+    scope: "openid wallet email:optional profile:optional social:optional badges:optional"
   }
 )
 
@@ -73,6 +73,7 @@ function LoginScopesDemo(){
     let [emailData, setEmailData] = useState({});
     let [socialsData, setSocialsData] = useState({});
     let [verifiedAddressesData, setVerifiedAddressesData] = useState({});
+    let [badgesData, setBadgesData] = useState({});
 
 
     const handleLogin = () => {
@@ -118,8 +119,7 @@ function LoginScopesDemo(){
         //    and multitasking so it is what it is. Use better practice
         //    if you're doing this for a production app!!!!!
         console.log("Handling Claims...")
-        console.log("Authorization: ",authorization)
-
+        console.log({authorization})
         let temp = {}
 
         // Domain
@@ -156,6 +156,12 @@ function LoginScopesDemo(){
         temp = {}
         authorization.idToken.verified_addresses.forEach(item => temp[item.symbol]=item.address)
         setVerifiedAddressesData(temp)
+
+        // Badges
+        temp = {}
+        authorization.idToken.badges.forEach(item => temp[item.code]={"description":item.description, "logo":item.logo})
+        authorization.idToken.badges.forEach(item => console.log(item))
+        setBadgesData(temp)
     }
 
     return(
@@ -173,6 +179,7 @@ function LoginScopesDemo(){
                     emailData={emailData}
                     socialsData={socialsData}
                     verifiedAddressesData={verifiedAddressesData}
+                    badgesData={badgesData}
                 />}
             </div>
         </div>

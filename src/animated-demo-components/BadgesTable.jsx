@@ -1,13 +1,17 @@
-import "./stylesheets/LoginClaims.css"
-import TableRow from "./TableRow"
+import "../login-components/stylesheets/LoginClaims.css"
+import TableRow from "../login-components/TableRow"
 
 
-function buildTableBody(showNone,data){
+function buildTableBody(data){
     // There are significantly better ways to do this, but I'm lazy and on a call and multitasking
     let tableRows = [];
     for (var key of Object.keys(data)){
-        if(data[key] || showNone){
-            tableRows.push(<TableRow a={key} b={data[key]}/>)
+        if(data[key]){
+            if (data[key]["logo"].length > 2){ // lazy handle emojis
+                tableRows.push(<tr><td><img src={data[key]["logo"]}/></td><td>{key}</td><td>{data[key]["description"]}</td></tr>)
+            }else{
+                tableRows.push(<tr><td>{data[key]["logo"]}</td><td>{key}</td><td>{data[key]["description"]}</td></tr>)
+            }
         }
     }
     return tableRows;
@@ -22,8 +26,8 @@ function generateResults(showNone,data,title){
             results.push(
                 <table id={title} className={tableClassName}>
                     <tbody>
-                        <tr><th>Data Point</th><th>Value</th></tr>
-                        {buildTableBody(showNone,data)}
+                        <tr><th>Logo</th><th>Name</th><th>Description</th></tr>
+                        {buildTableBody(data)}
                     </tbody>    
                 </table>
             );
@@ -37,7 +41,7 @@ function generateResults(showNone,data,title){
 }
 
 
-function ClaimsTable(props){
+function BadgesTable(props){
     const { showTitle = true} = props;
     const { showSubtitle = false} = props;
     return(
@@ -49,4 +53,4 @@ function ClaimsTable(props){
     )
 }
 
-export default ClaimsTable;
+export default BadgesTable;

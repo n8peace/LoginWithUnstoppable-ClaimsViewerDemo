@@ -18,6 +18,7 @@ function Navbar(props){
         props.showEmailDataHandler,
         props.showSocialsDataHandler,
         props.showVerifiedWalletsDataHandler,
+        props.showBadgesDataHandler,
         props.showSummaryHandler
     ]
     //allHandlers[2](true);
@@ -63,6 +64,14 @@ function Navbar(props){
                 onClick={()=>navigateToSection(props.showVerifiedWalletsDataHandler,allHandlers)}
             >
                 Verified Wallets
+            </button>
+
+            <button
+                id="badges"
+                className="section-link"
+                onClick={()=>navigateToSection(props.showBadgesDataHandler,allHandlers)}
+            >
+                Badges
             </button>
             
             <button 
