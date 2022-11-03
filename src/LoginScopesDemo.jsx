@@ -167,7 +167,7 @@ function LoginScopesDemo(){
     return(
         <div id="login-options-container" className="login-options-container">
             <img src={udLogo} style={{ height: 100, width: 200, alignSelf: "right"}} alt="udlogo"/>
-            <h1>Login Scopes!</h1>
+            <h1>Login With Unstoppable Demo</h1>
             <div className="login-section">
                 <p className="tip"> Login With Unstoppable has a variety of scopes. Try logging in below to check out what your app can get! </p>
                 <h3><a href="https://docs.unstoppabledomains.com/login-with-unstoppable/scopes-for-login/#scopes-for-login">Full Documentation</a></h3><br/>
