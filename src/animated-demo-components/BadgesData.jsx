@@ -18,7 +18,9 @@ function BadgesData(props){
         <div>
             <h1 className="animated-demo-fade">Badges</h1>
             { showDescription && <div className="description"><p className="animated-demo-slideup">
-                Badges are...
+                With Badges, Unstoppable Domain owners can now showcase a few of their favorite Web3 wallet achievements
+                such as what NFTs projects they’re involved in, how many domains they’ve collected, or cryptos they hold, 
+                directly on their public and shareable ud.me profiles pages like <a href="http://ud.me/itsjimbob.nft" target="_blank" rel="noopener noreferrer">this.</a>
             </p></div>}
             { showDetails && 
                 <div className="animated-demo-slideup">
