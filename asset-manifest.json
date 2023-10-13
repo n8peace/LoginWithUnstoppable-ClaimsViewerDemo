@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/LoginWithUnstoppable-ClaimsViewerDemo/static/css/main.30e90570.css",
+    "main.js": "/LoginWithUnstoppable-ClaimsViewerDemo/static/js/main.b40c1f8d.js",
+    "static/media/ud-logo-lockup.svg": "/LoginWithUnstoppable-ClaimsViewerDemo/static/media/ud-logo-lockup.20fdef5ae331e8d1e5c03d7610f9adac.svg",
+    "static/media/Unstoppable_Domains_Logo_Mark_Off_White-01.svg": "/LoginWithUnstoppable-ClaimsViewerDemo/static/media/Unstoppable_Domains_Logo_Mark_Off_White-01.3e4413de474517d5f9d9.svg",
+    "index.html": "/LoginWithUnstoppable-ClaimsViewerDemo/index.html",
+    "main.30e90570.css.map": "/LoginWithUnstoppable-ClaimsViewerDemo/static/css/main.30e90570.css.map",
+    "main.b40c1f8d.js.map": "/LoginWithUnstoppable-ClaimsViewerDemo/static/js/main.b40c1f8d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30e90570.css",
+    "static/js/main.b40c1f8d.js"
+  ]
+}
