@@ -12,10 +12,10 @@ let redirectUri = "";
 if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"){
     redirectUri = "http://localhost:3000"
 }else(
-    redirectUri = "https://loginwithunstoppable.com/"
+    redirectUri = "https://v-shadbolt.github.io/LoginWithUnstoppable-ClaimsViewerDemo/"
 )
 const uauth = new UAuth({
-    clientID: "943accc4-7610-4dbe-9fb4-aff7076a2da8",
+    clientID: "7e233b27-bb6e-45a0-9011-f0f96739b1dd",
     redirectUri: redirectUri,
     scope: "openid wallet email:optional profile:optional social:optional badges:optional"
   }
